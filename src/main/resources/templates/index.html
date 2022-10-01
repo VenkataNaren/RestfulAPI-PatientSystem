@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8"/>
+<title>Patient System</title>
+</head>
+<body>
+<div align="center">
+    <h1>Patient List</h1>
+    <a href="/newPatient">Add New Patient</a><br/>
+    <a href="/searchPatientPage">Search Patient With String</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Patient ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date Of Birth</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="patient : ${listPatient}">
+                <td th:text="${patient.id}">Patient ID</td>
+                <td th:text="${patient.firstName}">First Name</td>
+                <td th:text="${patient.lastName}">Last Name</td>
+                <td th:text="${patient.dateOfBirth}">Date Of Birth</td>
+            </tr>
+        </tbody>
+    </table>
+</div>   
+</body>
+</html>
